@@ -1,0 +1,53 @@
+\documentclass[landscape,a4paper]{article}
+\usepackage[pdftex,landscape,margin=0.5in]{geometry}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\graphicspath{{images/}}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\newcolumntype{S}{>{\columncolor{white}\color{red}}Y}
+\newcolumntype{Z}{>{\columncolor{white}\color{red}}X}
+
+\newcolumntype{R}{>{\columncolor{white}\color{black}}Y}
+\newcolumntype{D}{>{\columncolor{white}\color{black}}X}
+
+\newcommand*{\myalign}[2]{\multicolumn{1}{#1}{#2}}
+\newcommand{\gfx}[2]{\newline\vspace{0.5em}\myalign{c}{\includegraphics[scale=#1]{#2}}}
+\newcommand{\nl}{\\[2.1cm]\hline}
+\newcommand{\nd}[1]{\textcolor[rgb]{0.6,0.6,0.6}{#1}}
+\newcommand{\ns}[1]{\textcolor[rgb]{1,0.6,0.6}{#1}}
+\newcommand{\rd}[1]{\textcolor[rgb]{1,0,0}{\textbf{#1}}}
+\newcommand{\tb}[1]{\textbf{#1}}
+
+\begin{document}
+\pagestyle{empty}
+\begin{center}
+  \noindent\includegraphics[scale=0.7425]{sunrise}\\
+  \textit{\textsc{Soluppgång i Fuengirola, Spanien.}}\hfill\textit{\textsc{9 juli 2015}}
+\end{center}
+\newpage
+\begin{center}
+  \Huge{\textbf{I}}
+\end{center}
+\begin{tabularx}{\textwidth}{@{}RRRRRRS}
+  \textbf{\textsc{Måndag}}&\textbf{\textsc{Tisdag}}&\textbf{\textsc{Onsdag}}&\textbf{\textsc{Torsdag}}&\textbf{\textsc{Fredag}}&\textbf{\textsc{Lördag}}&\textbf{\textsc{Söndag}}\\
+\end{tabularx}
+\\
+\begin{tabularx}{\textwidth}{|D|D|D|D|D|D|Z|}
+  \hline
+  \nd{28}&\nd{29}&\nd{30}&\ns{31}&\rd{1}&\tb{2}&\tb{3}\nl
+  \tb{4}&\tb{5}&\rd{6}&\tb{7}&\tb{8}&\tb{9}&\tb{10}\nl
+  \tb{11}&\tb{12}&\tb{13}&\tb{14}&\tb{15}&\tb{16}&\tb{17}\nl
+  \tb{18}&\tb{19}&\tb{20}&\tb{21}&\tb{22}&\tb{23}&\tb{24}\nl
+  \tb{25}&\tb{26}&\tb{27}&\tb{28}&\tb{29}&\tb{30}&\tb{31}\nl
+  \nd{1}&\nd{2}&\nd{3}&\nd{4}&\nd{5}&\nd{6}&\ns{7}\nl
+\end{tabularx}
+\end{document}
