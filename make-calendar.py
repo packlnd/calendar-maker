@@ -20,9 +20,11 @@ class TexCalendar:
     def add_birthday(self):
         print "birthday"
 
-TexCalendar(2016, [
+t = TexCalendar(2016, [
     "fuengirola.jpg",
     "golden-gate.jpg",
     "senso-ji.jpg",
     "kerry.jpg"
-]).make_pdf()
+])
+t.add_birthday(2,7,"My birthday")
+t.make_pdf()
