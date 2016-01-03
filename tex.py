@@ -16,3 +16,15 @@ class Tex:
     @staticmethod
     def name_string(name):
         return Tex.MONTH_NAME_STRING % name
+
+    @staticmethod
+    def create_image_tex(img, desc, date):
+        #create_image_tex
+
+    @staticmethod
+    def create_month_name_tex(name):
+        #create_month_name_tex
+
+    @staticmethod
+    def create_days_tex():
+        #create_days_tex
