@@ -1,4 +1,5 @@
-import Month
+from month import Month
+from tex import Tex
 
 class TexCalendar:
     def __init__(self, year, images):

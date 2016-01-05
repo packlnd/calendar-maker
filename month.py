@@ -1,7 +1,9 @@
 import Tex
+import datetime
+import calendar
 
 class Month:
-    def __init__(self, index, image):
+    def __init__(self, year, index, image):
         self.index = index
         self.image = image
 
@@ -12,7 +14,12 @@ class Month:
         Tex.create_month_name_tex(Month.MONTH_NAMES[self.index])
 
     def make_days(self):
-        Tex.create_days_tex()
+        d = datetime.date(year, index+1, 1)
+        print d
+        print d.weekday()
+        self.days = [Tex.DAY]*(6*7)
+        print self.days
+        Tex.create_days_tex(d.weekday())
 
     def make(self):
         self.make_image("", "")
