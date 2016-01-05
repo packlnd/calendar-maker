@@ -35,7 +35,7 @@ class Tex:
 
     @staticmethod
     def create_days_tex():
-        #create_days_tex
+        print "create_days_tex"
 
     @staticmethod
     def write_to_file(fn, text):

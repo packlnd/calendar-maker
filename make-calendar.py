@@ -4,7 +4,6 @@ class TexCalendar:
     def __init__(self, year, images):
         self.year = year
         self.images = images
-        print "hello, world"
 
     def stitch(self):
         print "stitch"
