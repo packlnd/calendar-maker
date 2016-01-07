@@ -33,14 +33,24 @@ class Tex:
 
     @staticmethod
     def create_days_tex(days_m, first_day, days_prev_m):
+        count=1
         d_arr=['']*42
         for i in range(first_day):
-            d_arr[i] = Tex.OTHER_DAY % (i + days_prev_m - first_day + 1)
+            frmt = Tex.OTHER_DAY
+            if count % 7 == 0:
+                frmt = Tex.OTHER_RED
+            d_arr[i] = frmt % (i + days_prev_m - first_day + 1)
+            count +=1
         for i in range(days_m):
             d_arr[(i + first_day)] = Tex.DAY % (i+1)
+            count +=1
         next_m=1
         for i in range(days_m+first_day, 42):
-            d_arr[i] = Tex.OTHER_DAY % next_m
+            frmt = Tex.OTHER_DAY
+            if count % 7 == 0:
+                frmt = Tex.OTHER_RED
+            d_arr[i] = frmt % next_m
+            count +=1
             next_m+=1
         offset=0
         for i in range(7, 43, 7):
