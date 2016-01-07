@@ -1,8 +1,8 @@
 import os
 
 class Tex:
-    TEX_NAMES=["jan","feb","mar","apr","maj","jun",
-               "jul","aug","sep","okt","nov","dec"]
+    TEX_NAMES=["a","b","c","d","e","f",
+               "g","h","i","j","k","l"]
     IMAGE_STRING = \
         "\\noindent\includegraphics[scale=0.7425]{%s}\\\\" + \
         "\\textit{\\textsc{%s}}\hfill\\textit{\\textsc{%s}}"
@@ -57,5 +57,6 @@ class Tex:
 
     @staticmethod
     def finalize(i):
+        os.system("mkdir pdfs")
         os.system("pdflatex calendar.tex")
-        os.system("mv calendar.pdf %s.pdf" % Tex.TEX_NAMES[i-1])
+        os.system("mv calendar.pdf pdfs/%s.pdf" % Tex.TEX_NAMES[i-1])

@@ -7,13 +7,13 @@ class Month:
                  "April", "Maj", "Juni",
                  "Juli", "Augusti", "September",
                  "Oktober", "November", "December"]
-    def __init__(self, year, month, image):
+    def __init__(self, year, month, tup):
         self.year = year
         self.month = month
-        self.image = image
+        self.tup = tup
 
-    def make_image(self, desc, date):
-        Tex.create_image_tex(self.image, desc, date)
+    def make_image(self):
+        Tex.create_image_tex(self.tup[0], self.tup[1], self.tup[2])
 
     def make_month_name(self):
         Tex.create_month_name_tex(Month.MONTH_NAMES[self.month-1])
@@ -35,7 +35,7 @@ class Month:
                 days_prev_month)
 
     def make(self):
-        self.make_image("desc", "date")
+        self.make_image()
         self.make_month_name()
         self.make_days()
         Tex.finalize(self.month)
