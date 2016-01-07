@@ -8,18 +8,34 @@ class TexCalendar:
         self.year = year
         self.images = images
 
+    def help_stitch(self, a, b, c):
+        os.system(
+            "pdfunite pdfs/%s.pdf pdfs/%s.pdf pdfs/%s.pdf" %
+            (a,b,c))
+
     def stitch(self):
-        os.system("pdfunite pdfs/a.pdf pdfs/b.pdf pdfs/p.pdf")
-        os.system("pdfunite pdfs/p.pdf pdfs/c.pdf pdfs/q.pdf")
-        os.system("pdfunite pdfs/q.pdf pdfs/d.pdf pdfs/r.pdf")
-        os.system("pdfunite pdfs/r.pdf pdfs/e.pdf pdfs/s.pdf")
-        os.system("pdfunite pdfs/s.pdf pdfs/f.pdf pdfs/t.pdf")
-        os.system("pdfunite pdfs/t.pdf pdfs/g.pdf pdfs/u.pdf")
-        os.system("pdfunite pdfs/u.pdf pdfs/h.pdf pdfs/v.pdf")
-        os.system("pdfunite pdfs/v.pdf pdfs/i.pdf pdfs/w.pdf")
-        os.system("pdfunite pdfs/w.pdf pdfs/j.pdf pdfs/x.pdf")
-        os.system("pdfunite pdfs/x.pdf pdfs/k.pdf pdfs/y.pdf")
-        os.system("pdfunite pdfs/y.pdf pdfs/l.pdf calendar.pdf")
+        self.help_stitch("a", "b", "p")
+        self.help_stitch("p", "c", "q")
+        self.help_stitch("q", "d", "r")
+        self.help_stitch("r", "e", "s")
+        self.help_stitch("s", "f", "t")
+        self.help_stitch("t", "g", "u")
+        self.help_stitch("u", "h", "v")
+        self.help_stitch("v", "i", "w")
+        self.help_stitch("w", "j", "x")
+        self.help_stitch("x", "k", "y")
+        self.help_stitch("y", "l", "../calendar")
+        #os.system("pdfunite pdfs/a.pdf pdfs/b.pdf pdfs/p.pdf")
+        #os.system("pdfunite pdfs/p.pdf pdfs/c.pdf pdfs/q.pdf")
+        #os.system("pdfunite pdfs/q.pdf pdfs/d.pdf pdfs/r.pdf")
+        #os.system("pdfunite pdfs/r.pdf pdfs/e.pdf pdfs/s.pdf")
+        #os.system("pdfunite pdfs/s.pdf pdfs/f.pdf pdfs/t.pdf")
+        #os.system("pdfunite pdfs/t.pdf pdfs/g.pdf pdfs/u.pdf")
+        #os.system("pdfunite pdfs/u.pdf pdfs/h.pdf pdfs/v.pdf")
+        #os.system("pdfunite pdfs/v.pdf pdfs/i.pdf pdfs/w.pdf")
+        #os.system("pdfunite pdfs/w.pdf pdfs/j.pdf pdfs/x.pdf")
+        #os.system("pdfunite pdfs/x.pdf pdfs/k.pdf pdfs/y.pdf")
+        #os.system("pdfunite pdfs/y.pdf pdfs/l.pdf calendar.pdf")
         os.system("rm -r pdfs")
 
     def make_pdf(self):
@@ -34,18 +50,18 @@ class TexCalendar:
     #    print "birthday"
 
 t = TexCalendar(2016, [
-     ("sunrise.jpg", "Soluppgång i Fuengirola", "9 juli 2015"),
-     ("ggb.jpg", "Soluppgång över Golden Gate-bron", "28 november 2015"),
-     ("Amsterdam.jpg", "", ""),
-     ("homecoming.jpg", "", ""),
-     ("kerrypark.jpg", "", ""),
-     ("lightshow.jpg", "", ""),
-     ("oregonstate.jpg", "", ""),
-     ("sensoji.jpg", "", ""),
-     ("snoqualmie.jpg", "", ""),
-     ("spaceneedle.jpg", "", ""),
-     ("Town.jpg", "", ""),
-     ("BigBen.jpg", "", "")
+    ("sunrise.jpg", "Soluppgång, Fuengirola, Spanien", "9 juli 2015"),
+    ("ggb.jpg", "Soluppgång över Golden Gate-bron, San Francisco, Kalifornien", "28 november 2015"),
+    ("Amsterdam.jpg", "Kanal, Amsterdam", "26 juli 2015"),
+    ("homecoming.jpg", "Husky Stadium, Seattle, Washington", "17 oktober 2015"),
+    ("kerrypark.jpg", "Kerry Park, Seattle, Washington", "21 november 2015"),
+    ("lightshow.jpg", "Gas Works Park, Seattle, Washington", ""),
+    ("oregonstate.jpg", "Reeser Stadium, Corvallis, Oregon", "21 november 2015"),
+    ("sensoji.jpg", "Sensoji-templet, Tokyo, Japan", "19 december 2015"),
+    ("snoqualmie.jpg", "Snoqualmie Falls, Snoqualmie, Washington", ""),
+    ("spaceneedle.jpg", "desc", "date"),
+    ("Town.jpg", "Utsikt från balkongen, Fuengirola, Spanien", ""),
+    ("BigBen.jpg", "Big Ben, London", "18 juli 2015")
 ])
 #t.add_birthday(2,7,"My birthday")
 t.make_pdf()
