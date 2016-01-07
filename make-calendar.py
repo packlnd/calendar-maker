@@ -10,8 +10,8 @@ class TexCalendar:
         print "stitch"
 
     def make_pdf(self):
-        for i in range(12):
-            Month(i, self.images[i]).make()
+        for i in range(2):
+            Month(self.year, i+1, self.images[i]).make()
         self.stitch()
 
     #def add_holiday(self):
@@ -21,10 +21,12 @@ class TexCalendar:
     #    print "birthday"
 
 t = TexCalendar(2016, [
-    "fuengirola.jpg",
-    "golden-gate.jpg",
-    "senso-ji.jpg",
-    "kerry.jpg"
+     "sunrise.jpg",
+     "ggb.jpg"
+    #"fuengirola.jpg",
+    #"golden-gate.jpg",
+    #"senso-ji.jpg",
+    #"kerry.jpg"
 ])
 #t.add_birthday(2,7,"My birthday")
 t.make_pdf()
