@@ -7,7 +7,7 @@ class Tex:
         "\\noindent\includegraphics[scale=0.7425]{%s}\\\\" + \
         "\\textit{\\textsc{%s}}\hfill\\textit{\\textsc{%s}}"
     MONTH_NAME_STRING = \
-        "\Huge{\\textbf{%s}}"
+        "\Huge{\\textbf{\\textsc{%s}}}"
     DAY = "\\tb{%s}&"
     OTHER_DAY = "\\nd{%s}&"
     OTHER_RED = "\\ns{%s}&"
