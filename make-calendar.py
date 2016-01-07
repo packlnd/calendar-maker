@@ -36,16 +36,16 @@ class TexCalendar:
 t = TexCalendar(2016, [
      ("sunrise.jpg", "Soluppgång i Fuengirola", "9 juli 2015"),
      ("ggb.jpg", "Soluppgång över Golden Gate-bron", "28 november 2015"),
-     ("ggb.jpg", "", ""),
-     ("ggb.jpg", "", ""),
-     ("ggb.jpg", "", ""),
-     ("ggb.jpg", "", ""),
-     ("ggb.jpg", "", ""),
-     ("ggb.jpg", "", ""),
-     ("ggb.jpg", "", ""),
-     ("ggb.jpg", "", ""),
-     ("ggb.jpg", "", ""),
-     ("ggb.jpg", "", "")
+     ("Amsterdam.jpg", "", ""),
+     ("homecoming.jpg", "", ""),
+     ("kerrypark.jpg", "", ""),
+     ("lightshow.jpg", "", ""),
+     ("oregonstate.jpg", "", ""),
+     ("sensoji.jpg", "", ""),
+     ("snoqualmie.jpg", "", ""),
+     ("spaceneedle.jpg", "", ""),
+     ("Town.jpg", "", ""),
+     ("BigBen.jpg", "", "")
 ])
 #t.add_birthday(2,7,"My birthday")
 t.make_pdf()
