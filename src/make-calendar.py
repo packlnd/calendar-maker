@@ -36,7 +36,7 @@ class TexCalendar:
         #os.system("pdfunite pdfs/w.pdf pdfs/j.pdf pdfs/x.pdf")
         #os.system("pdfunite pdfs/x.pdf pdfs/k.pdf pdfs/y.pdf")
         #os.system("pdfunite pdfs/y.pdf pdfs/l.pdf calendar.pdf")
-        os.system("rm -r pdfs")
+        os.system("rm -r pdfs calendar.aux calendar.log")
 
     def make_pdf(self):
         for i in range(12):

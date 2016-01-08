@@ -23,12 +23,12 @@ class Tex:
 
     @staticmethod
     def create_image_tex(img, desc, date):
-        Tex.write_to_file("image.tex",
+        Tex.write_to_file("tex/image.tex",
                 Tex.image_text(img, desc, date))
 
     @staticmethod
     def create_month_name_tex(name):
-        Tex.write_to_file("month_name.tex",
+        Tex.write_to_file("tex/month_name.tex",
                 Tex.name_string(name))
 
     @staticmethod
@@ -56,7 +56,7 @@ class Tex:
         for i in range(7, 43, 7):
             d_arr.insert(i+offset, '\\nl\n')
             offset+=1
-        Tex.write_to_file("days.tex",
+        Tex.write_to_file("tex/days.tex",
                 (''.join(d_arr)).replace('&\\nl', '\\nl'))
 
     @staticmethod
@@ -68,5 +68,5 @@ class Tex:
     @staticmethod
     def finalize(i):
         os.system("mkdir pdfs")
-        os.system("pdflatex calendar.tex")
+        os.system("pdflatex tex/calendar.tex")
         os.system("mv calendar.pdf pdfs/%s.pdf" % Tex.TEX_NAMES[i-1])
