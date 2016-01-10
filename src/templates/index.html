@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <title>Calendar maker</title>
 </head>
 <body>
-    <h1>Calendar maker</h1>
+    <div id="content">
+        <h1>Calendar maker</h1>
+        <form action="">
+            Language:
+            <select disabled>
+                <option value="sv">Swedish</option>
+            </select></br>
+            Day starts on:<br/>
+            <input type="radio" name="start_of_week" value="sunday">Sunday<br/>
+            <input type="radio" name="start_of_week" value="monday">Monday
+        </form>
+    </div>
 </body>
