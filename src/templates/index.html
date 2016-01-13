@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="utf8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <title>Calendar maker</title>
+<meta charset="utf8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/dropzone.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+<script src="{{ url_for('static', filename='js/dropzone.js') }}"></script>
+<title>Calendar maker</title>
 </head>
 <body>
-    <div id="content">
-        <h1>Calendar maker</h1>
-        <form action="">
-            Language:
-            <select disabled>
-                <option value="sv">Swedish</option>
-            </select></br>
-            Day starts on:
-            <input disabled type="radio" name="start_of_week" value="sunday">Sunday
-            <input disabled type="radio" name="start_of_week" value="monday" checked="checked">Monday<br/>
-            Select images:
-            <input type="file" name="files" multiple>
-        </form>
-    </div>
+<div id="content">
+    <h1>Calendar maker</h1>
+    <form action="">
+        Language:
+        <select disabled>
+            <option value="sv">Swedish</option>
+        </select></br>
+        Day starts on:
+        <input disabled type="radio" name="start_of_week" value="sunday">Sunday
+        <input disabled type="radio" name="start_of_week" value="monday" checked="checked">Monday<br/>
+        Drop images:
+    </form>
+    <form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>
+</div>
 </body>
