@@ -1,3 +1,10 @@
 #content {
     padding:20px;
+    width:30%;
+    min-width:460px;
+    margin:auto;
+}
+
+.right {
+    float:right;
 }
