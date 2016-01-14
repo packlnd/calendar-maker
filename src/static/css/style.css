@@ -12,3 +12,9 @@
 .left {
     float:left;
 }
+
+.thumb {
+    color:#CCC;
+    max-width:40px;
+    max-height:40px;
+}
