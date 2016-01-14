@@ -10,9 +10,10 @@ def index():
 
 @app.route("/upload",methods=['GET','POST'])
 def upload():
-    if request.method == 'POST':
-        print request.files
-        print request.data
+    print request.form
+    print request.files
+    return render_template('index.html')
 
 if __name__ == "__main__":
+    app.debug=True
     app.run()

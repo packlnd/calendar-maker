@@ -11,21 +11,35 @@
     <center>
         <h1>Calendar maker</h1>
     </center>
-    <form action="/upload" method="post">
+    <form action="/upload" method="post" enctype="multipart/form-data">
         <fieldset>
-            <label>Language:</label>
-            <select name="lang" disabled><option value="sv">Swedish</option></select>
+            <div class="form-group">
+                <label for="lang">Language:</label>
+                <select class="form-control" name="lang">
+                    <option name="sv">Swedish</option>
+                </select>
+            </div>
         </fieldset>
         <fieldset>
-            <label>Day starts on:</label>
-            <input disabled type="radio" name="start_of_week" value="sunday">Sunday
-            <input disabled type="radio" name="start_of_week" value="monday" checked="checked">Monday<br/>
+            <div class="form-group">
+                <label for="start_of_week">Day starts on:</label><br/>
+                <label class="radio-inline">
+                    <input type="radio" name="start_of_week" value="sun">Sunday
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="start_of_week" value="mon">Monday
+                </label>
+            </div>
         </fieldset>
         <fieldset>
-            <label class="left" for="file">Select images</label>
-            <input class="right" name="file" type="file">
-        </fieldset><br/>
-        <input class="right" type="submit" value="Preview">
+            <div class="form-group">
+                <label for="file">Select images</label>
+                <input name="file" type="file" multiple>
+            </div>
+        </fieldset>
+        <fieldset>
+            <button class="btn btn-success right" type="submit">Preview</button>
+        </fieldset>
     </form>
 </div>
-</body>
+s</body>
