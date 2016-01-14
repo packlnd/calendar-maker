@@ -3,7 +3,6 @@
 <meta charset="utf8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-<link href="{{ url_for('static', filename='css/dropzone.css') }}" rel="stylesheet">
 <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 <title>Calendar maker</title>
 </head>
@@ -12,10 +11,10 @@
     <center>
         <h1>Calendar maker</h1>
     </center>
-    <form id="upload-file" method="post" enctype="multipart/form-data">
+    <form action="/upload" method="post">
         <fieldset>
             <label>Language:</label>
-            <select disabled><option value="sv">Swedish</option></select>
+            <select name="lang" disabled><option value="sv">Swedish</option></select>
         </fieldset>
         <fieldset>
             <label>Day starts on:</label>
@@ -23,12 +22,10 @@
             <input disabled type="radio" name="start_of_week" value="monday" checked="checked">Monday<br/>
         </fieldset>
         <fieldset>
-            <label for="file">Select images</label>
-            <input name="file" type="file">
+            <label class="left" for="file">Select images</label>
+            <input class="right" name="file" type="file">
         </fieldset><br/>
-        <fieldset class="right">
-            <button id="upload-file-btn" type="button">Preview</button>
-        </fieldset>
+        <input class="right" type="submit" value="Preview">
     </form>
 </div>
 </body>

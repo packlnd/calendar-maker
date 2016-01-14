@@ -8,10 +8,11 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route("/upload",methods=["POST"])
+@app.route("/upload",methods=['GET','POST'])
 def upload():
-    print request.files
-    return 200
+    if request.method == 'POST':
+        print request.files
+        print request.data
 
 if __name__ == "__main__":
     app.run()
