@@ -32,17 +32,37 @@
             </div>
         </fieldset>
         <fieldset>
+            <div class="form-group">
+                <label for="year">Year:</label>
+                <input class="form-control" placeholder="Year" type="text">
+            </div>
+        </fieldset>
+        <fieldset>
             <table class="table">
                 <thead>
                     <tr>
                         <th>Month</th>
                         <th>Image</th>
-                        <th>File</th>
+                        <th>ag</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!--Do this as for-loop-->
+                {% for m in months: %}
+                    <tr>
+                        <td>{{m}}</td>
+                        <td><img class="thumb" src="awdwaw"></td>
+                        <td>
+                            Desc</br>
+                            Date
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-default">
+                                <span class="glyphicon glyphicon-folder-open"></span>
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
                 </tbody>
             </table>
         </fieldset>
