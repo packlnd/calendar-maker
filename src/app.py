@@ -6,9 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    months=('January','February','March','April','May','June',\
-        'July','August','September','October','November','December')
-    return render_template('index.html',months=months)
+    return render_template('index.html')
 
 @app.route("/upload",methods=['GET','POST'])
 def upload():

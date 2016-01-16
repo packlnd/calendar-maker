@@ -18,3 +18,7 @@
     max-width:40px;
     max-height:40px;
 }
+
+.small-input {
+    max-height:20px;
+}

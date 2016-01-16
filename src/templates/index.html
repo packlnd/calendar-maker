@@ -14,27 +14,33 @@
     <form action="/upload" method="post" enctype="multipart/form-data">
         <fieldset>
             <div class="form-group">
-                <label for="lang">Language:</label>
-                <select class="form-control" name="lang">
-                    <option name="sv">Swedish</option>
-                </select>
+                <label class="col-sm-3" for="lang">Language:</label>
+                <div class="col-sm-9">
+                    <select class="form-control" name="lang">
+                        <option name="sv">Swedish</option>
+                    </select>
+                </div>
             </div>
         </fieldset>
         <fieldset>
             <div class="form-group">
-                <label for="start_of_week">Day starts on:</label><br/>
-                <label class="radio-inline">
-                    <input type="radio" name="start_of_week" value="sun">Sunday
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" name="start_of_week" value="mon">Monday
-                </label>
+                <label class="col-sm-3" for="start_of_week">Day starts on:</label>
+                <div class="col-sm-9">
+                    <label class="radio-inline">
+                        <input type="radio" name="start_of_week" value="sun">Sunday
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="start_of_week" value="mon">Monday
+                    </label>
+                </div>
             </div>
         </fieldset>
         <fieldset>
             <div class="form-group">
-                <label for="year">Year:</label>
-                <input class="form-control" placeholder="Year" type="text">
+                <label class="col-sm-3" for="year">Year:</label>
+                <div class="col-sm-9">
+                    <input class="form-control" placeholder="Year" type="text">
+                </div>
             </div>
         </fieldset>
         <fieldset>
@@ -48,13 +54,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                {% for m in months: %}
+                {% for m in ('January','February','March','April','May','June','July','August','September','October','November','December'): %}
                     <tr>
                         <td>{{m}}</td>
                         <td><img class="thumb" src="awdwaw"></td>
                         <td>
-                            Desc</br>
-                            Date
+                            <label class="col-sm-2">Description</label>
+                            <div class="col-sm-4">
+                                <input class="small-input form-control" type="text">
+                            </div><br/><br/>
+                            <label class="col-sm-2">Date</label>
+                            <div class="col-sm-4">
+                                <input class="small-input form-control" type="text">
+                            </div>
                         </td>
                         <td>
                             <button type="button" class="btn btn-default">
