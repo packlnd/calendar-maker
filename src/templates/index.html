@@ -49,7 +49,7 @@
                     <tr>
                         <th>Month</th>
                         <th>Image</th>
-                        <th>ag</th>
+                        <th>Image text</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -57,15 +57,19 @@
                 {% for m in ('January','February','March','April','May','June','July','August','September','October','November','December'): %}
                     <tr>
                         <td>{{m}}</td>
-                        <td><img class="thumb" src="awdwaw"></td>
+                        <td><img class="thumb" src="{{ url_for('static', filename='placeholder.png') }}"></td>
                         <td>
-                            <label class="col-sm-5">Description</label>
-                            <div class="col-sm-7">
-                                <input class="small-input form-control" type="text">
-                            </div><br/>
-                            <label class="col-sm-5">Date</label>
-                            <div class="col-sm-7">
-                                <input class="small-input form-control" type="text">
+                            <div>
+                                <label class="col-sm-5">Description</label>
+                                <div class="col-sm-7">
+                                    <input placeholder="Sunset, New York City, NY"  class="small-input form-control" type="text">
+                                </div><br/>
+                            </div>
+                            <div class="table-input-bottom">
+                                <label class="col-sm-5">Date</label>
+                                <div class="col-sm-7">
+                                    <input placeholder="June 8, 2009" class="small-input form-control" type="text">
+                                </div>
                             </div>
                         </td>
                         <td>
