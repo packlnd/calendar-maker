@@ -22,3 +22,7 @@
 .small-input {
     max-height:20px;
 }
+
+label.col-sm-5 {
+    margin-bottom:0px;
+}
