@@ -15,7 +15,11 @@ def upload():
     if Util.validate_data(request.form, request.files):
         data = Util.extract_form_data(request.form,request.files)
         TexCalendar(data.year, data.images).make_pdf()
-    return redirect("/",200)
+    return render_template('calendar.html')
+
+@app.route("/calendar",methods=['GET','POST'])
+def calendar():
+    return render_template('calendar.html')
 
 if __name__ == "__main__":
     app.debug=True
