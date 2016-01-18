@@ -3,17 +3,19 @@ import datetime
 from calendar import monthrange
 
 class Month:
+    SHORT_NAMES=["jan", "feb", "mar", "apr", "may", "jun",
+                 "jul", "aug", "sep", "oct", "nov", "dec"]
     MONTH_NAMES=["Januari", "Februari", "Mars",
                  "April", "Maj", "Juni",
                  "Juli", "Augusti", "September",
                  "Oktober", "November", "December"]
-    def __init__(self, year, month, tup):
+    def __init__(self, year, month, img):
         self.year = year
         self.month = month
-        self.tup = tup
+        self.img = img
 
     def make_image(self):
-        Tex.create_image_tex(self.tup[0], self.tup[1], self.tup[2])
+        Tex.create_image_tex(self.img.fname, self.img.desc, self.img.date)
 
     def make_month_name(self):
         Tex.create_month_name_tex(Month.MONTH_NAMES[self.month-1])
