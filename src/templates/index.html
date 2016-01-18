@@ -57,8 +57,12 @@
                 {% for m in ('January','February','March','April','May','June','July','August','September','October','November','December'): %}
                 {% set sm=m.lower()[0:3] %}
                 <tr>
-                    <td>{{m}}</td>
-                    <td><img id="img-{{sm}}" name="img-{{sm}}" class="thumb" src="{{ url_for('static', filename='placeholder.png') }}"></td>
+                    <td>
+                        {{m}}
+                    </td>
+                    <td>
+                        <img id="img-{{sm}}" name="img-{{sm}}" class="thumb" src="{{ url_for('static', filename='placeholder.png') }}">
+                    </td>
                     <td>
                         <div>
                             <label class="col-sm-5">Description</label>
