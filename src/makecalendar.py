@@ -9,9 +9,9 @@ class TexCalendar:
         self.images = images
 
     def help_stitch(self, a, b, c):
-        os.system(
-            "pdfunite pdfs/%s.pdf pdfs/%s.pdf pdfs/%s.pdf" %
-            (a,b,c))
+        print "Stitching....",
+        os.system("pdfunite pdfs/%s.pdf pdfs/%s.pdf pdfs/%s.pdf" % (a,b,c))
+        print "Done"
 
     def stitch(self):
         self.help_stitch("a", "b", "p")
@@ -24,13 +24,18 @@ class TexCalendar:
         self.help_stitch("v", "i", "w")
         self.help_stitch("w", "j", "x")
         self.help_stitch("x", "k", "y")
-        self.help_stitch("y", "l", "../calendar")
+        self.help_stitch("y", "l", "../src/static/calendar")
         os.system("rm -r pdfs calendar.aux calendar.log")
 
-    def make_pdf(self):
-        for i in range(12):
-            Month(self.year, i+1, self.images[i]).make()
-        self.stitch()
+    def make_month(self,i):
+        print "Making month:",i,"....",
+        Month(self.year, i, self.images[i-1]).make()
+        print "Done"
+
+    #def make_pdf(self):
+    #    for i in range(12):
+    #        Month(self.year, i+1, self.images[i]).make()
+    #    self.stitch()
 
     #def add_holiday(self):
     #    print "holiday"

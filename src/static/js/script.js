@@ -12,7 +12,6 @@ $(function(ready) {
     }
 
     $("input[id^=browse]").change(function(){
-        console.log(this.id);
         readURL(this, this.id.split("-")[1]);
     });
 });

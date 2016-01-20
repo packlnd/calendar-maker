@@ -70,3 +70,4 @@ class Tex:
         os.system("mkdir pdfs")
         os.system("pdflatex tex/calendar.tex")
         os.system("mv calendar.pdf pdfs/%s.pdf" % Tex.TEX_NAMES[i-1])
+        print "Calendar finalized"
