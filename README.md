@@ -1,11 +1,13 @@
+![](http://imgur.com/dPvMpHz)
+
 # calendar-maker
-:date: Calendar-maker in Python
+Calendar-maker in Python
 
-#Example
+## Example
 ...
 
-# How to use the calendar maker
+## How to use the calendar maker
 ...
 
-# How to contribute
+## How to contribute
 ...
