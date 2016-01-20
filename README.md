@@ -1,4 +1,4 @@
-![](http://imgur.com/dPvMpHz)
+![](http://i.imgur.com/dPvMpHz.jpg)
 
 # calendar-maker
 Calendar-maker in Python
