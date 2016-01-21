@@ -10,4 +10,5 @@ Calendar-maker in Python
 ...
 
 ## How to contribute
-...
+### Add a language
+
