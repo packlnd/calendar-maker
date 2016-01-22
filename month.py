@@ -1,24 +1,24 @@
 from tex import Tex
 import datetime
 from calendar import monthrange
+from util import Util
 
 class Month:
-    SHORT_NAMES=["jan", "feb", "mar", "apr", "may", "jun",
-                 "jul", "aug", "sep", "oct", "nov", "dec"]
-    MONTH_NAMES=["Januari", "Februari", "Mars",
-                 "April", "Maj", "Juni",
-                 "Juli", "Augusti", "September",
-                 "Oktober", "November", "December"]
-    def __init__(self, year, month, img):
+    def __init__(self, year, month, img, lang):
         self.year = year
         self.month = month
         self.img = img
+        self.MONTH_NAMES = Util.read_months(lang)
+        self.WEEK_DAYS = Util.read_weekdays(lang)
 
     def make_image(self):
         Tex.create_image_tex(self.img.fname, self.img.desc, self.img.date)
 
     def make_month_name(self):
-        Tex.create_month_name_tex(Month.MONTH_NAMES[self.month-1])
+        Tex.create_month_name_tex(self.MONTH_NAMES[self.month-1])
+
+    def make_weekday_names(self):
+        Tex.create_weekday_name_tex(self.WEEK_DAYS)
 
     def get_days_in_prev_month(self, y, m):
         py = y

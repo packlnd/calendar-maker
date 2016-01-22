@@ -8,6 +8,10 @@ class Tex:
         "\\textit{\\textsc{%s}}\hfill\\textit{\\textsc{%s}}"
     MONTH_NAME_STRING = \
         "\Huge{\\textbf{\\textsc{%s}}}"
+    WEEKDAY_NAMES_STRING = \
+        "\\textbf{\\textsc{%s}}&\\textbf{\\textsc{%s}}&\\textbf{" + \
+        "\\textsc{%s}}&\\textbf{\\textsc{%s}}&\\textbf{\\textsc{%" + \
+        "s}}&\\textbf{\\textsc{%s}}&\\textbf{\\textsc{%s}}\\\\"
     DAY = "\\tb{%s}&"
     OTHER_DAY = "\\nd{%s}&"
     OTHER_RED = "\\ns{%s}&"
@@ -18,8 +22,17 @@ class Tex:
         return Tex.IMAGE_STRING % (img, desc, date)
 
     @staticmethod
+    def weekdays_string(wd):
+        return Tex.WEEKDAY_NAMES_STRING % wd
+
+    @staticmethod
     def name_string(name):
         return Tex.MONTH_NAME_STRING % name
+
+    @staticmethod
+    def create_weekdays_tex(wd):
+        Tex.write_to_file("tex/weekdays.tex",
+                Tex.weekdays_string(wd))
 
     @staticmethod
     def create_image_tex(img, desc, date):

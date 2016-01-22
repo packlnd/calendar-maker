@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request,redirect,send_from_directory
+from flask import Flask, render_template, request,redirect
 from util import Util,Data
 from makecalendar import TexCalendar
 
@@ -8,14 +8,14 @@ cal = None
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('index.html', months=Util.read_months('English'))
 
 @app.route("/upload",methods=['GET','POST'])
 def upload():
     global cal
     if Util.validate_data(request.form, request.files):
         data = Util.extract_form_data(request.form,request.files)
-        cal = TexCalendar(data.year, data.images)
+        cal = TexCalendar(data.year, data.images, data.lang)
     return render_template('calendar.html', data=data)
 
 @app.route("/month/<int:num>")

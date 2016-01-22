@@ -4,9 +4,10 @@ from tex import Tex
 import os
 
 class TexCalendar:
-    def __init__(self, year, images):
+    def __init__(self, year, images, lang):
         self.year = int(year)
         self.images = images
+        self.lang = lang
 
     def help_stitch(self, a, b, c):
         print "Stitching....",
@@ -24,38 +25,10 @@ class TexCalendar:
         self.help_stitch("v", "i", "w")
         self.help_stitch("w", "j", "x")
         self.help_stitch("x", "k", "y")
-        self.help_stitch("y", "l", "../src/static/calendar")
+        self.help_stitch("y", "l", "../static/calendar")
         os.system("rm -r pdfs calendar.aux calendar.log")
 
     def make_month(self,i):
         print "Making month:",i,"....",
-        Month(self.year, i, self.images[i-1]).make()
+        Month(self.year, i, self.images[i-1], self.lang).make()
         print "Done"
-
-    #def make_pdf(self):
-    #    for i in range(12):
-    #        Month(self.year, i+1, self.images[i]).make()
-    #    self.stitch()
-
-    #def add_holiday(self):
-    #    print "holiday"
-
-    #def add_birthday(self):
-    #    print "birthday"
-
-#t = TexCalendar(2016, [
-#    ("sunrise.jpg", "Soluppgång, Fuengirola, Spanien", "9 juli 2015"),
-#    ("ggb.jpg", "Soluppgång över Golden Gate-bron, San Francisco, Kalifornien", "28 november 2015"),
-#    ("Amsterdam.jpg", "Kanal, Amsterdam", "26 juli 2015"),
-#    ("homecoming.jpg", "Husky Stadium, Seattle, Washington", "17 oktober 2015"),
-#    ("kerrypark.jpg", "Kerry Park, Seattle, Washington", "21 november 2015"),
-#    ("lightshow.jpg", "Gas Works Park, Seattle, Washington", ""),
-#    ("oregonstate.jpg", "Reeser Stadium, Corvallis, Oregon", "21 november 2015"),
-#    ("sensoji.jpg", "Sensoji-templet, Tokyo, Japan", "19 december 2015"),
-#    ("snoqualmie.jpg", "Snoqualmie Falls, Snoqualmie, Washington", ""),
-#    ("spaceneedle.jpg", "desc", "date"),
-#    ("Town.jpg", "Utsikt från balkongen, Fuengirola, Spanien", ""),
-#    ("BigBen.jpg", "Big Ben, London", "18 juli 2015")
-#])
-##t.add_birthday(2,7,"My birthday")
-#t.make_pdf()

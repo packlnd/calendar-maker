@@ -17,7 +17,8 @@
                 <label class="col-sm-3" for="lang">Language:</label>
                 <div class="col-sm-9">
                     <select class="form-control" name="lang">
-                        <option name="sv">Swedish</option>
+                        <option name="sv">Svenska</option>
+                        <option name="en">English</option>
                     </select>
                 </div>
             </div>
@@ -54,7 +55,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                {% for m in ('January','February','March','April','May','June','July','August','September','October','November','December'): %}
+                {% for m in months: %}
                 {% set sm=m.lower()[0:3] %}
                 <tr>
                     <td>

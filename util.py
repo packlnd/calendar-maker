@@ -1,5 +1,3 @@
-from month import Month
-
 class Image:
     def __init__(self, img, desc, date, i):
         self.fname='tmp'+str(i)
@@ -16,10 +14,12 @@ class Data:
         self.images=images
 
 class Util:
+    SHORT_NAMES=["jan", "feb", "mar", "apr", "may", "jun",
+                 "jul", "aug", "sep", "oct", "nov", "dec"]
     @staticmethod
     def extract_form_images(fs,fm):
         res=[]
-        for i,m in enumerate(Month.SHORT_NAMES):
+        for i,m in enumerate(Util.SHORT_NAMES):
             res.append(Image(fs['browse-'+m], fm['desc-'+m], fm['date-'+m],i))
         return res
 
@@ -35,7 +35,7 @@ class Util:
         form_data=['lang','start_of_week','year']
         file_data=[]
         for i in ('desc','date'):
-            for m in Month.SHORT_NAMES:
+            for m in Util.SHORT_NAMES:
                 form_data.append(i+"-"+m)
                 file_data.append('browse-'+m)
         for d in form_data:
@@ -47,3 +47,16 @@ class Util:
                 print d,"does not exist"
                 return False
         return True
+
+    @staticmethod
+    def read_months(lang):
+        return Util.file_to_tuple('languages/'+lang+'_months')
+
+    @staticmethod
+    def read_weekdays(lang):
+        return Util.file_to_tuple('languages/'+lang+'_weekdays')
+
+    @staticmethod
+    def file_to_tuple(fn):
+        with open(fn) as f:
+            return tuple(line for line in f.readlines())
