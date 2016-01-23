@@ -39,5 +39,6 @@ class Month:
     def make(self):
         self.make_image()
         self.make_month_name()
+        self.make_weekday_names()
         self.make_days()
         Tex.finalize(self.month)

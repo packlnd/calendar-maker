@@ -62,17 +62,20 @@
                         {{m}}
                     </td>
                     <td>
-                        <img id="img-{{sm}}" name="img-{{sm}}" class="thumb" src="{{ url_for('static', filename='placeholder.png') }}">
+                        <div class="img-wrap">
+                            <span class="helper"></span>
+                            <img id="img-{{sm}}" name="img-{{sm}}" class="thumb" src="{{ url_for('static', filename='placeholder.png') }}">
+                        </div>
                     </td>
-                    <td>
+                    <td class="input-td">
                         <div>
-                            <label class="col-sm-5">Description</label>
+                            <label class="col-sm-5">Description:</label>
                             <div class="col-sm-7">
                                 <input name="desc-{{sm}}" placeholder="Sunset, New York City, NY"  class="small-input form-control" type="text">
                             </div><br/>
                         </div>
                         <div class="table-input-bottom">
-                            <label class="col-sm-5">Date</label>
+                            <label class="col-sm-5">Date:</label>
                             <div class="col-sm-7">
                                 <input name="date-{{sm}}" placeholder="June 8, 2009" class="small-input form-control" type="text">
                             </div>
@@ -90,7 +93,7 @@
             </table>
         </fieldset>
         <fieldset>
-            <button id="prev" class="btn btn-primary btn-lg right" type="submit">Preview</button>
+            <button id="prev" class="btn btn-primary btn-lg right" type="submit">Create</button>
         </fieldset>
     </form>
 </div>

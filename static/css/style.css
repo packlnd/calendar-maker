@@ -32,5 +32,40 @@ label.col-sm-5 {
 }
 
 table.table tbody tr td {
+    text-align:center;
+    vertical-align:middle;
+    border:none;
+}
+
+table.table tbody tr td.input-td {
+    text-align:right;
+}
+
+table.table tbody tr td.input-td label {
+    padding:0px;
+}
+
+table.table thead tr th {
+    text-align:center;
+    border:none;
+}
+
+.img-wrap {
+    height:80px;
+    white-space: nowrap;
+    text-align: center; margin: 1em 0;
+    margin:0px;
+    padding:0px;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+img {
+    max-width:80px;
+    max-height:80px;
     vertical-align:middle;
 }
