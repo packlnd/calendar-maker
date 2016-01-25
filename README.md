@@ -1,7 +1,7 @@
 ![](http://i.imgur.com/dPvMpHz.jpg)
 
 # Calendar maker
-Calendar-maker in Python
+Makes a calendar from your pictures and description. Example calendar can be found here:
 
 ## Example
 ...
