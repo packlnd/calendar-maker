@@ -80,6 +80,7 @@ class Tex:
 
     @staticmethod
     def finalize(i):
+        #TODO: Replace os.system with new process
         os.system("mkdir pdfs")
         os.system("pdflatex tex/calendar.tex")
         os.system("mv calendar.pdf pdfs/%s.pdf" % Tex.TEX_NAMES[i-1])
